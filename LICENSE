@@ -12,9 +12,9 @@ assets, and other files distributed as part of the popscript project.
 "Author" means the copyright holder of the Software.
 
 "Contributor" means any person who submits code, documentation, or other
-material to the P0PSCRIPT project.
+material to the popscript project.
 
-"Project" means the official P0PSCRIPT repository and its official
+"Project" means the official popscript repository and its official
 derivatives maintained by the Author.
 
 2. PERMITTED USE
@@ -25,7 +25,7 @@ revocable license to:
 * view the source code;
 * study the source code;
 * modify the source code for the purpose of submitting changes to the
-  official P0PSCRIPT Project;
+  official popscript Project;
 * create and submit Pull Requests to the official popscript repository;
 * run the Software for personal, educational, research, and development
   purposes.
@@ -59,7 +59,7 @@ Without explicit written permission from the Author, you may not:
   code;
 * claim authorship or ownership of the popscript project;
 * remove or alter copyright, license, or attribution notices;
-* use the P0PSCRIPT source code as the basis for another public
+* use the popscript source code as the basis for another public
   repository or project.
 
 Forks of the official popscript repository are permitted only for the
