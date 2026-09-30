@@ -147,5 +147,5 @@ popscript/
 ## Links
 
 - Website: [popscr.github.io](https://popscr.github.io)
-- Package repository: [github.com/fallawerr-cmd/popscript/tree/main/libs](https://github.com/fallawerr-cmd/popscript/tree/main/libs)
+- Package repository: [github.com/fallawerr-cmd/libs/tree/main](https://github.com/fallawerr-cmd/liba/tree/main)
 - Email: fallawerr@gmail.com
