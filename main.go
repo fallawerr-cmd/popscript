@@ -136,8 +136,8 @@ func runFile(path string) {
 }
 
 func downloadPackage(name string) {
-	url := "https://raw.githubusercontent.com/Pop-Inc/Pop-Inc.github.io/main/libs/" + name + ".plib"
-	fmt.Printf("Fetching %s from Pop-Inc repo...\n", name)
+	url := "https://raw.githubusercontent.com/fallawerr/plibs/main/" + name + ".plib"
+	fmt.Printf("Fetching %s from fallawerr's repo...\n", name)
 	resp, err := http.Get(url)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
