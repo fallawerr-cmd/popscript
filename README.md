@@ -1,51 +1,151 @@
-# popscript
+# PopScript
 
-**popscript** is a programming language and development project.
+A statically typed, interpreted programming language designed for readability, explicit syntax, and deterministic parsing. Every line reads like a sentence.
 
-> popscript is currently under active development.
+```
+lib import random
+lib import random.number
 
-## About
+list fruits = ["apple", "banana", "cherry"]
 
-popscript is a programming language designed to be simple, practical, and easy to work with.
+for fruit with fruits;
+    int bonus = random.number(from=1, to=10)
+    print("Got {fruit} with bonus {bonus}")
+stop;
+```
 
-The project is still in development, so features, syntax, and internal architecture may change.
+## Features
 
-## Contributing
+- **Statically typed** — all types declared explicitly: `int`, `float`, `string`, `bool`, `list`
+- **Readable syntax** — `for fruit with fruits;` reads like plain English
+- **String interpolation** — `print("Hello {name}!")`
+- **GUI support** — built-in `ui` library powered by Fyne
+- **Package manager** — `pop get package` downloads from Pop-Inc repository
+- **Memory control** — optional manual memory management with `armemory=true`
+- **if / elif / else** — full conditional support
+- **when loops** — while-style loops with infinite loop protection
+- **Functions with return** — `func`, `return`, proper scoping
 
-Contributions are welcome!
+## Quick Example
 
-You can fork the repository, make your changes, and submit a Pull Request.
+```
+lib import ui
 
-All Pull Requests are reviewed before being merged into the `main` branch.
+func on_click();
+    string name = ui.get(name="input1")
+    ui.set(name="label1", value="Hello {name}!")
+stop;
 
-If you want to work on a large feature or make major architectural changes, please open an Issue first.
+ui.window(title="PopScript App", width=400, height=300)
+ui.label(name="label1", text="Enter your name:")
+ui.input(name="input1", placeholder="Name...")
+ui.button(text="Greet", action="on_click")
+ui.run()
+```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+## Installation
 
-## Issues
+### Windows
+Download `pop.exe` from [Releases](https://github.com/Pop-Inc/Pop-Inc.github.io/releases/latest) and add to PATH.
 
-Found a bug?
+### Linux
+```bash
+wget https://github.com/Pop-Inc/Pop-Inc.github.io/releases/latest/download/pop
+chmod +x pop
+sudo mv pop /usr/local/bin/
+```
 
-Please create an Issue with:
+> Linux users also need: `sudo apt install libgl1-mesa-dev xorg-dev`
 
-* a description of the problem;
-* steps to reproduce it;
-* expected behavior;
-* actual behavior;
-* relevant error messages or logs.
+## Usage
 
-You can also submit a Pull Request with a fix.
+```bash
+pop run hello.pscript       # Run a script
+pop get packagename         # Install a package
+pop list                    # List installed packages
+```
+
+## Syntax Overview
+
+```
+$/ This is a comment
+
+int x = 42
+float pi = 3.14
+string name = "PopScript"
+bool flag = true
+list nums = [1, 2, 3]
+
+if x > 10;
+    print("high")
+elif x > 5;
+    print("medium")
+else;
+    print("low")
+stop;
+
+int count = 0
+when count < 5;
+    print("count is {count}")
+    int count = count + 1
+stop;
+
+for item with nums;
+    print(item)
+stop;
+
+for i with num(10);
+    print(i)
+stop;
+
+func add(a, b);
+    return a + b
+stop;
+
+int result = add(3, 4)
+print("Result: {result}")
+```
+
+## Built-in Libraries
+
+| Library | Description |
+|---------|-------------|
+| `random` | Random numbers and letters |
+| `ui` | Native GUI windows |
+| `file` | File system operations |
+| `time` | Date, time, sleep |
+
+## Building from Source
+
+```bash
+git clone https://github.com/Pop-Inc/popscript
+cd popscript
+go mod init pop
+go get fyne.io/fyne/v2
+go mod tidy
+go build -o pop
+```
+
+Requires Go 1.22+ and GCC (for Fyne/CGO).
+
+## Project Structure
+
+```
+popscript/
+  lexer/        — tokenizer
+  ast/          — abstract syntax tree nodes
+  parser/       — builds AST from tokens
+  interpreter/  — executes AST
+  ui/           — GUI library (Fyne wrapper)
+  main.go       — CLI entry point (pop command)
+```
 
 ## License
 
-popscript is source-available under the **popscript Source-Available License**.
+[MyOwnV1.0](LICENSE)
 
-You are allowed to fork the repository and contribute changes through Pull Requests.
+## Links
 
-See [LICENSE](LICENSE) for the full license terms.
-
-## Project Status
-
-popscript is currently being developed.
-
-Some features may be incomplete, unstable, or subject to change.
+- Website: [popscr.github.io](https://popscr.github.io)
+- Package repository: [github.com/fallawerr-cmd/popscript/tree/main/libs](https://github.com/fallawerr-cmd/popscript/tree/main/libs)
+- Email: fallawerr@gmail.com
