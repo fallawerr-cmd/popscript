@@ -50,7 +50,7 @@ Download `pop.exe` from [Releases](https://github.com/fallawerr-cmd/popscript/re
 
 ### Linux
 ```bash
-wget https://github.com/fallawerr/popscript/releases/latest/download/pop
+wget https://github.com/fallawerr-cmd/popscript/releases/latest/download/pop
 chmod +x pop
 sudo mv pop /usr/local/bin/
 ```
@@ -118,7 +118,7 @@ print("Result: {result}")
 ## Building from Source
 
 ```bash
-git clone https://github.com/fallawerr/popscript
+git clone https://github.com/fallawerr-cmd/popscript
 cd popscript
 go mod init pop
 go get fyne.io/fyne/v2
