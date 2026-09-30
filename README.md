@@ -46,11 +46,11 @@ ui.run()
 ## Installation
 
 ### Windows
-Download `pop.exe` from [Releases](https://github.com/Pop-Inc/Pop-Inc.github.io/releases/latest) and add to PATH.
+Download `pop.exe` from [Releases](https://github.com/fallawerr-cmd/popscript/releases/latest) and add to PATH. (sorry win version is not ready)
 
 ### Linux
 ```bash
-wget https://github.com/Pop-Inc/Pop-Inc.github.io/releases/latest/download/pop
+wget https://github.com/fallawerr/popscript/releases/latest/download/pop
 chmod +x pop
 sudo mv pop /usr/local/bin/
 ```
@@ -118,7 +118,7 @@ print("Result: {result}")
 ## Building from Source
 
 ```bash
-git clone https://github.com/Pop-Inc/popscript
+git clone https://github.com/fallawerr/popscript
 cd popscript
 go mod init pop
 go get fyne.io/fyne/v2
