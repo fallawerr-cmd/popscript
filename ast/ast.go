@@ -235,3 +235,22 @@ type DerefExpr struct {
 }
 
 func (d *DerefExpr) nodeType() string { return "DerefExpr" }
+
+type MapLit struct {
+    Keys   []Node
+    Values []Node
+    Line   int
+}
+
+type MapAccessExpr struct {
+    Name  string
+    Key   Node
+    Line  int
+}
+
+type MapAssign struct {
+    Name  string
+    Key   Node
+    Value Node
+    Line  int
+}
