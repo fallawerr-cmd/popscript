@@ -739,7 +739,7 @@ func (p *Parser) parsePostfix(base ast.Node) (ast.Node, error) {
 		if _, err := p.expect(lexer.TOKEN_RBRACKET); err != nil {
 			return nil, err
 		}
-		base = &ast.IndexExpr{List: base, Index: idx, Line: line}
+		base = &ast.IndexExpr{Target: base, Index: idx, Line: line}
 	}
 	return base, nil
 }
