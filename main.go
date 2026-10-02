@@ -15,7 +15,7 @@ import (
 	"pop/parser"
 )
 
-go
+
 func main() {
 	if len(os.Args) < 2 {
 		selfPath, err := os.Executable()
