@@ -52,6 +52,18 @@ func (v Value) String() string {
 		}
 		result += "]"
 		return result
+	case "map":
+        result := "{"
+        i := 0
+        for k, v := range v.MVal {
+            if i > 0 {
+                result += ", "
+            }
+            result += "\"" + k + "\": " + v.String()
+            i++
+        }
+        result += "}"
+        return result
 	default:
 		return "<nil>"
 	}
@@ -1015,5 +1027,9 @@ func coerce(v Value, typeName string, line int) (Value, error) {
 			return v, nil
 		}
 	}
+	case "map":
+        if v.Kind == "map" {
+            return v, nil
+    }
 	return Value{}, fmt.Errorf("line %d: cannot assign %s to %s", line, v.Kind, typeName)
 }
