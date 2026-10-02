@@ -22,6 +22,7 @@ type Value struct {
 	SVal string
 	BVal bool
 	LVal []Value
+	MVal map[string]Value
 }
 
 func listVal(v []Value) Value {
