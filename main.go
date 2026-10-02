@@ -15,14 +15,26 @@ import (
 	"pop/parser"
 )
 
+go
 func main() {
 	if len(os.Args) < 2 {
+		selfPath, err := os.Executable()
+		if err == nil {
+			self, err := os.ReadFile(selfPath)
+			if err == nil {
+				marker := []byte("\x00POPSCRIPT_EMBEDDED\x00")
+				if bytes.Contains(self, marker) {
+					runFile(selfPath)
+					return
+				}
+			}
+		}
 		printUsage()
 		os.Exit(1)
 	}
 
 	cmd := os.Args[1]
-
+	
 	switch cmd {
 	case "run":
 		if len(os.Args) < 3 {
