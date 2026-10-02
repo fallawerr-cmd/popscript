@@ -254,3 +254,6 @@ type MapAssign struct {
     Value Node
     Line  int
 }
+func (m *MapLit) nodeType() string { return "MapLit" }
+func (m *MapAccessExpr) nodeType() string { return "MapAccessExpr" }
+func (m *MapAssign) nodeType() string { return "MapAssign" }
