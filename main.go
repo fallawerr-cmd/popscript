@@ -43,9 +43,6 @@ func main() {
 		}
 		runFile(os.Args[2])
 
-	case "init":
-		fmt.Println("Initialized new PopScript project.")
-
 	case "list":
 		listPackages()
 
@@ -344,6 +341,7 @@ func printUsage() {
 
 Usage:
   pop run <file.pscript>    Run a PopScript file
-  pop get <package>         Install a package from Pop-Inc repo (not ready)
+  pop build <file.pscript>  Build a Popscript file
+  pop get <package>         Install a package from the repository
   pop list                  List installed packages`)
 }
