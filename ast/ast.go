@@ -179,7 +179,7 @@ type Identifier struct {
 func (i *Identifier) nodeType() string { return "Identifier" }
 
 type IndexExpr struct {
-	List  Node
+	Target  Node
 	Index Node
 	Line  int
 }
